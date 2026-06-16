@@ -1,0 +1,42 @@
+class Contactus:
+    def __init__(self,page):
+        self.page=page
+        self.contactus=page.locator('(//a[@href="https://www.tranktechnologies.com/contact-us"])[1]')
+        self.name=page.locator('(//input[@name="name"])[2]')
+        self.mail=page.locator('(//input[@name="email"])[2]')
+        self.company=page.locator('(//input[@name="company"])[2]')
+        self.service=page.locator('(//select[@name="service"])[2]')
+        self.phone=page.locator('(//input[@name="phone"])[2]')
+        self.message=page.locator('(//textarea[@name="message"])[2]')
+        self.robot=page.locator('(//span[@role="checkbox"])[1]')
+        self.submit=page.locator('(//input[@value="Submit"])[2]')
+    #    self.page.wait_for_timeout(5000)
+    #    self.page.go_back()
+
+
+    def consultation_form(self):
+        self.contactus.click()
+        self.page.wait_for_timeout(2000)
+        self.name.click()
+        self.name.fill("Bhavya")
+        self.page.wait_for_timeout(2000)
+        self.mail.click()
+        self.mail.fill("bhavya@gmail.com")
+        self.page.wait_for_timeout(2000)
+        self.company.click()
+        self.company.fill("mycomp")
+        self.page.wait_for_timeout(2000)
+        self.service.click()
+        self.service.select_option("App Development")
+        self.page.wait_for_timeout(2000)
+        self.phone.click()
+        self.phone.fill("5678934567")
+        self.page.wait_for_timeout(2000)
+        self.message.click()
+        self.message.fill("good luck")
+        self.page.wait_for_timeout(2000)
+    #    self.robot.click()
+    #    self.page.wait_for_timeout(2000)
+        self.submit.click()
+        self.page.wait_for_timeout(2000)
+
